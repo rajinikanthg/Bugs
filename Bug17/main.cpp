@@ -13,7 +13,7 @@
 using namespace std;
 
 #define N 5
- char * names[N] = {
+ const char * const names[N] = {
   "Red Sox", "Yankees", "Giants",
   "Rangers", "Phillies"
 };
@@ -22,6 +22,8 @@ using namespace std;
 char* find_name() {
     char *x;
     int id = rand() % N;
+    printf("%s\n", names[id]);
+    cout << "Sizeof(names) : "<< sizeof(*names[id])<<endl;
     x = (char*)malloc(100);
     if(!x)
         exit(1);    
